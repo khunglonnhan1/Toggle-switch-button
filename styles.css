@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+  font-family: system-ui, sans-serif;
+}
+
+.switch label {
+  position: relative;
+  display: inline-block;
+  width: 240px;
+  height: 60px;
+  border-radius: 99px;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2) inset;
+  font-size: 32px;
+  font-weight: 600;
+  transition: ease 0.2s;
+  background: url(./img-gif/sunset.gif);
+  background-size: cover;
+  background-position: center;
+}
+
+.switch label::before {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  content: "";
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid rgba(90, 79, 136, 0.2);
+  background: #fff;
+  transition: ease 0.2s;
+  cursor: pointer;
+}
+
+.switch input:checked + label {
+  background: #01d356;
+  background: url(./img-gif/night.gif);
+  background-size: cover;
+  background-position: center;
+}
+
+.switch input:checked + label::before {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
